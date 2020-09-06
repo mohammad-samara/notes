@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/mohammad-samara/notes/issues"
   },
-  "homepage": "https://github.com/mohammad-samara/notes#readme"
+  "homepage": "https://github.com/mohammad-samara/notes#readme",
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
 }
