@@ -1,4 +1,4 @@
-# LAB - 01
+# LAB - 02
 
 <!-- ## Project: Project Name Here -->
 ## Standard Node.js Applications
@@ -7,7 +7,7 @@
 
 ### Links and Resources
 
-<!-- * [submission PR](https://github.com/mohammad-401-advanced-javascript/notes/pull/1) -->
+* [submission PR](https://github.com/mohammad-samara/notes/pull/2)
 
 ### Documentation
 
@@ -38,7 +38,8 @@ no api or db for naw.
 
 #### Tests
 
-<!-- * Unit Tests: `npm test` -->
+* Jest Tests: `npm test`  
 * Lint Tests: `npm run lint`
 
-<!-- Incomplete Tests: -->
+ Incomplete Tests:  
+ none
