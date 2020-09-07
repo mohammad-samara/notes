@@ -2,7 +2,7 @@
 
 // to do http requests like httpie, postman and so on.
 
-// ./index.js -m POST -u http://localhost:3000
+// ./index.js -a 'my text note'
 
 'use strict';
 
@@ -11,4 +11,17 @@ const Notes = require('./lib/notes.js');  //display input(note)
 
 const inputCommand = new Input();
 const myNote = new Notes(inputCommand);
-myNote.execute(inputCommand);
+inputCommand.valid() ? myNote.execute(inputCommand) : help() ;
+
+function help() {
+  console.log(`
+        api usage1: api --add <text note>
+        api usage2: api -a <text note>
+
+        --add text note to be saved enclosed with single quotes 
+        -a text note to be saved enclosed with single quotes 
+        must enter a text note
+        must use -a or --add
+    `);
+}
+//myNote.execute(inputCommand);
