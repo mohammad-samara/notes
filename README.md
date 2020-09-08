@@ -7,7 +7,7 @@
 
 ### Links and Resources
 
-* [submission PR](https://github.com/mohammad-samara/notes/pull/2)
+* [submission PR](https://github.com/mohammad-samara/notes/pull/4)
 
 ### Documentation
 

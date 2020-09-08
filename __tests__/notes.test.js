@@ -1,6 +1,22 @@
 'use strict';
 
 const Notes = require('../lib/notes.js');
+
+
+const mongoose = require('mongoose');
+const MONGOOSE_URL = 'mongodb://localhost:27017/jestTest';
+mongoose.connect(MONGOOSE_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
+const supergoose = require('supergoose');
+// let record = new NoteSchema(myNote);   myNote is an object
+// let saved = await record.save();
+
+const NoteSchema = require('../lib/model/notes-schema');
+
 // Spies!
 // we will get to know if something was called or not.
 jest.spyOn(global.console, 'log');
@@ -13,9 +29,14 @@ describe('NOTE Module', () => {
     myNote.execute({action: undefined, payload: undefined});
     expect(console.log).not.toHaveBeenCalled();
   });
-  it('logs data when execute() is called with valid data', () => {
+  it('create a new note when provided with valid data', async() => {
     const myNote = new Notes();
-    myNote.execute({ action: 'add', payload: 'text note' });
+    await myNote.add({ action: 'add', payload: 'text note',category: 'category1' });
+
+    // let allitems = await NoteSchema.find();
+    // console.log('allitems : ', allitems);
+
+    // myNote.execute({ action: 'add', payload: 'text note',category: 'category1' });
     expect(console.log).toHaveBeenCalled();
   });
 });
