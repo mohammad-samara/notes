@@ -5,6 +5,7 @@ const minimist = require('minimist');
 minimist.mockImplementation(()=> {
   return {
     add: 'text note',
+    c: 'category1',
   };
 });
 
