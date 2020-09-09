@@ -25,13 +25,24 @@ inputCommand.valid() ? myNote.execute(inputCommand) : help() ;
 
 async function help() {
   console.log(`
-        api usage1: api --add <text note>
-        api usage2: api -a <text note>
+    1. for adding a note
+        api usage1: api --add <text note> --category <category>
+        api usage2: api -a <text note> -c <category>
 
         --add text note to be saved enclosed with single quotes 
         -a text note to be saved enclosed with single quotes 
-        must enter a text note
-        must use -a or --add
+        must enter a text note and category
+        must use -a or --add and must use -c or --category when adding a note
+    2. for listing notes
+        api usage1: api -l 
+        api usage1: api --list
+      
+    3. for deleting a note by it's id
+        api usage: api -d <note id>
+        api usage: api --delete <note id>
+
+    *****api is replaced with node index.js*****
+
     `);
   await mongoose.disconnect();
 }
