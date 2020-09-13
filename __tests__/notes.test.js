@@ -52,19 +52,17 @@ describe('Note Model', () => {
     });
   });
 
-  // it('can get() a food item', ()=> {
-  //   let obj = { payload: 'text note',category: 'category2'};
-  //   return  notesSchema.create(obj).then(record => {
-  //     console.log('obj : ',obj);
-  //     return notesSchema.get(record._id)
-  //       .then(foodItem => {
-  //         console.log('foodItem : ',foodItem);
-  //         Object.keys(obj).forEach(key => {
-  //           expect(foodItem[key]).toEqual(obj[key]);
-  //         });
-  //       });
-  //   });
-  // });
+
+  it('2 can create a new note item', async () => {
+    let obj = { payload: 'text note',category: 'category1' };
+    let record = await notesSchema.create(obj);
+    console.log('record : ',record);
+    Object.keys(obj).forEach(key => {
+      expect(record[key]).toEqual(obj[key]);
+    });
+  });
+
+
 
   it('can get() a note item', async ()=> {
     let obj = { payload: 'text note',category: 'category2'};
@@ -76,7 +74,20 @@ describe('Note Model', () => {
       expect(oldNote[key]).toEqual(obj[key]);
     });
     
-    // expect(addedNote).toEqual(addedNote);
+  // expect(addedNote).toEqual(addedNote);
   });
   
+
+// it('can get() a food item', ()=> {
+//   let obj = { payload: 'text note',category: 'category2'};
+//   return  notesSchema.create(obj).then(record => {
+//     console.log('obj : ',obj);
+//     return notesSchema.get(record._id)
+//       .then(foodItem => {
+//         console.log('foodItem : ',foodItem);
+//         Object.keys(obj).forEach(key => {
+//           expect(foodItem[key]).toEqual(obj[key]);
+//         });
+//       });
+//   });
 });
